@@ -3,6 +3,7 @@ package jogodaforca.esm.studio.com.jogodaforcaesm;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -17,14 +18,14 @@ import jogodaforca.esm.studio.com.jogodaforcaesm.jogador.Jogador;
 
 public class JogoDaForca extends AppCompatActivity {
 
-    private int n_jogadores;
-    /**
+     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
-    private List<Jogador> jogadores = new ArrayList<Jogador>();
-    String palavra_secreta;
+    //private List<Jogador> jogadores = new ArrayList<Jogador>();
+    private Jogador player1 = new Jogador();
+    private List<Button> letras = new ArrayList<Button>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,32 +35,6 @@ public class JogoDaForca extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
-
-    private void setN_jogadores(int n) {
-        if (n > 0 && n <= 8) {
-            this.n_jogadores = n;
-        } else {
-            throw new RuntimeException("Nº de jogadores inválido");
-        }
-    }
-
-    private void criarJogadores(){
-        for (int i = 0; i < n_jogadores; i++) {
-            jogadores.add(0, new Jogador());
-        }
-    }
-
-    //recebe as palavras dos jogadores que não estão jogando e sorteia uma delas
-    private String setPalavraSecreta (String Palavra_J1, String Palavra_J2){
-        Random sorteio = new Random(1);
-        if (sorteio.nextInt() == 0){
-            return Palavra_J1;
-        }
-        else{
-            return Palavra_J2;
-        }
-    }
-
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -85,6 +60,10 @@ public class JogoDaForca extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client.connect();
         AppIndex.AppIndexApi.start(client, getIndexApiAction());
+        criarBotoes();
+        for (int i = 0; i < letras.size(); i++){
+            letras.get(i).setCursorVisible(true);
+        }
     }
 
     @Override
@@ -96,5 +75,16 @@ public class JogoDaForca extends AppCompatActivity {
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
     }
+
+    private void criarBotoes(){
+        Button set_botao = new Button(this);
+        String [] alfabeto = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+
+        for (int i = 0; i < alfabeto.length; i++){
+            set_botao.setText(alfabeto[i]);
+            letras.add(set_botao);
+        }
+    }
+
 }
 
