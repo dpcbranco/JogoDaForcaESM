@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import jogodaforca.esm.studio.com.jogodaforcaesm.Palavra.Letras;
 import jogodaforca.esm.studio.com.jogodaforcaesm.jogador.Jogador;
 
 public class JogoDaForca extends AppCompatActivity {
@@ -25,7 +26,7 @@ public class JogoDaForca extends AppCompatActivity {
     private GoogleApiClient client;
     //private List<Jogador> jogadores = new ArrayList<Jogador>();
     private Jogador player1 = new Jogador();
-    private List<Button> letras = new ArrayList<Button>();
+    private List<Letras> letras = new ArrayList<Letras>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,13 +78,119 @@ public class JogoDaForca extends AppCompatActivity {
     }
 
     private void criarBotoes(){
-        Button set_botao = new Button(this);
-        String [] alfabeto = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+        //String [] alfabeto = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+        Letras nova_letra;
 
-        for (int i = 0; i < alfabeto.length; i++){
-            set_botao.setText(alfabeto[i]);
-            letras.add(set_botao);
-        }
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.A);
+        letras.add(0, nova_letra);
+
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.B);
+        letras.add(1, nova_letra);
+
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.C);
+        letras.add(2, nova_letra);
+
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.D);
+        letras.add(3, nova_letra);
+
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.E);
+        letras.add(4, nova_letra);
+
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.F);
+        letras.add(5, nova_letra);
+
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.G);
+        letras.add(6, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.H);
+        letras.add(7, nova_letra);
+
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.I);
+        letras.add(8, nova_letra);
+
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.J);
+        letras.add(9, nova_letra);
+
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.K);
+        letras.add(10, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.L);
+        letras.add(11, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.M);
+        letras.add(12, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.N);
+        letras.add(13, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.O);
+        letras.add(14, nova_letra);
+
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.P);
+        letras.add(15, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.Q);
+        letras.add(16, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.S);
+        letras.add(17, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.T);
+        letras.add(18, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.U);
+        letras.add(19, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.V);
+        letras.add(20, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.W);
+        letras.add(21, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.X);
+        letras.add(22, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.Y);
+        letras.add(23, nova_letra);
+
+        nova_letra = new Letras(this);
+        nova_letra.findViewById(R.id.Z);
+        letras.add(24, nova_letra);
+
     }
 
 }
