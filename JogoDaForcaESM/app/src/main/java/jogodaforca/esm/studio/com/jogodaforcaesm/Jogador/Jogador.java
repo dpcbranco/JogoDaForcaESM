@@ -5,6 +5,18 @@ package jogodaforca.esm.studio.com.jogodaforcaesm.jogador;
  */
 
 public class Jogador {
-    boolean morto = false;
+    private boolean morto = false;
+    private int erros = 0;
+    private Forca forca = new Forca();
 
+    public boolean estaVivo (){
+        return  morto;
+    }
+
+    public void perderVida(){
+        erros++;
+        if (erros == 5){
+            morto = true;
+        }
+    }
 }
