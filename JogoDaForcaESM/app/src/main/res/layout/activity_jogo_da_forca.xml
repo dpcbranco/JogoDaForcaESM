@@ -268,10 +268,10 @@
         android:layout_toEndOf="@+id/Y" />
 
     <Button
-        android:text="ARRISCAR PALAVRA"
+        android:text="ARRISCAR PALAVRAS"
         android:layout_width="300pt"
         android:layout_height="wrap_content"
-        android:id="@+id/arriscar_palavra"
+        android:id="@+id/arriscar_palavras"
         android:layout_below="@+id/U"
         android:layout_alignStart="@+id/U"
         android:layout_alignEnd="@+id/X"/>
@@ -293,7 +293,7 @@
         android:layout_marginTop="36dp"
         android:layout_alignParentTop="true"
         android:layout_alignEnd="@+id/forca_estrutura"
-        android:visibility="invisible"
+        android:visibility="visible"
         />
 
     <ImageView
@@ -301,7 +301,7 @@
         android:layout_height="100px"
         app:srcCompat="@drawable/forca_corpo"
         android:id="@+id/corpo"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:layout_below="@+id/cabeca"
         android:layout_alignStart="@+id/cabeca"
         />
@@ -311,26 +311,59 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/forca_bracos"
         android:id="@+id/bracos"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:layout_below="@+id/cabeca"
-        android:layout_toStartOf="@+id/arriscar_palavra"/>
+        android:layout_alignStart="@+id/perna_esq"/>
 
     <ImageView
         android:layout_width="50px"
-        android:layout_height="70px"
+        android:layout_height="60px"
+        app:srcCompat="@drawable/forca_perna_dir"
+        android:id="@+id/perna_dir"
+        android:visibility="visible"
+        android:layout_below="@+id/corpo"
+        android:layout_toStartOf="@+id/arriscar_palavras"/>
+
+    <ImageView
+        android:layout_width="50px"
+        android:layout_height="60px"
         app:srcCompat="@drawable/forca_perna_esq"
         android:id="@+id/perna_esq"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:layout_below="@+id/corpo"
         android:layout_toStartOf="@+id/perna_dir"/>
 
-    <ImageView
-        android:layout_width="50px"
-        android:layout_height="70px"
-        app:srcCompat="@drawable/forca_perna_dir"
-        android:id="@+id/perna_dir"
-        android:visibility="invisible"
-        android:layout_below="@+id/corpo"
-        android:layout_alignEnd="@+id/bracos"/>
+    <TextView
+        android:text="Letras usadas"
+        android:textAlignment="center"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:id="@+id/letras_usadas"
+        android:textColor="@color/common_plus_signin_btn_text_light_pressed"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/D"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:text="Palavra 1"
+        android:ems="10"
+        android:id="@+id/palavra1"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/Y"
+        android:layout_toStartOf="@+id/V"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:text="Palavra 2"
+        android:ems="10"
+        android:layout_alignTop="@+id/palavra1"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/palavra2"
+        android:layout_alignStart="@+id/V"/>
 
 </RelativeLayout>
