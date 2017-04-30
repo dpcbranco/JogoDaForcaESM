@@ -296,4 +296,41 @@
         android:visibility="invisible"
         />
 
+    <ImageView
+        android:layout_width="50px"
+        android:layout_height="100px"
+        app:srcCompat="@drawable/forca_corpo"
+        android:id="@+id/corpo"
+        android:visibility="invisible"
+        android:layout_below="@+id/cabeca"
+        android:layout_alignStart="@+id/cabeca"
+        />
+
+    <ImageView
+        android:layout_width="100px"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/forca_bracos"
+        android:id="@+id/bracos"
+        android:visibility="invisible"
+        android:layout_below="@+id/cabeca"
+        android:layout_toStartOf="@+id/arriscar_palavra"/>
+
+    <ImageView
+        android:layout_width="50px"
+        android:layout_height="70px"
+        app:srcCompat="@drawable/forca_perna_esq"
+        android:id="@+id/perna_esq"
+        android:visibility="invisible"
+        android:layout_below="@+id/corpo"
+        android:layout_toStartOf="@+id/perna_dir"/>
+
+    <ImageView
+        android:layout_width="50px"
+        android:layout_height="70px"
+        app:srcCompat="@drawable/forca_perna_dir"
+        android:id="@+id/perna_dir"
+        android:visibility="invisible"
+        android:layout_below="@+id/corpo"
+        android:layout_alignEnd="@+id/bracos"/>
+
 </RelativeLayout>

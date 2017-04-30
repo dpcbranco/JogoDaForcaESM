@@ -66,9 +66,7 @@ public class JogoDaForca extends AppCompatActivity {
         client.connect();
         AppIndex.AppIndexApi.start(client, getIndexApiAction());
         criarBotoes();
-        for (int i = 0; i < letras.size(); i++){
-            letras.get(i).setCursorVisible(true);
-        }
+        construirForca();
     }
 
     @Override
@@ -203,6 +201,21 @@ public class JogoDaForca extends AppCompatActivity {
         ImageView obterParte = new ImageView(this);
 
         obterParte.findViewById(R.id.cabeca);
+        corpo.add(0, obterParte);
+
+        obterParte.findViewById(R.id.corpo);
+        corpo.add(1, obterParte);
+
+        obterParte.findViewById(R.id.bracos);
+        corpo.add(2, obterParte);
+
+        obterParte.findViewById(R.id.perna_dir);
+        corpo.add(3, obterParte);
+
+        obterParte.findViewById(R.id.perna_esq);
+        corpo.add(4, obterParte);
+
+        player1.obterCorpo(corpo);
     }
 
 }

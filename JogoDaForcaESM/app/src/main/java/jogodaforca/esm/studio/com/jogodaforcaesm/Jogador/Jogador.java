@@ -2,7 +2,7 @@ package jogodaforca.esm.studio.com.jogodaforcaesm.jogador;
 
 import android.widget.ImageView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Shikado on 26/04/2017.
@@ -25,7 +25,7 @@ public class Jogador {
         }
     }
 
-    public void obterForca(ArrayList<ImageView> corpo){
+    public void obterCorpo(List<ImageView> corpo){
         forca = new Forca (corpo);
     }
 }
