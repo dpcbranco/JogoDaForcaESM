@@ -3,7 +3,10 @@ package jogodaforca.esm.studio.com.jogodaforcaesm;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -32,6 +35,7 @@ public class JogoDaForca extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jogo_da_forca);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -191,6 +195,14 @@ public class JogoDaForca extends AppCompatActivity {
         nova_letra.findViewById(R.id.Z);
         letras.add(24, nova_letra);
 
+    }
+
+    //Forca precisa ser construída aqui para obter contexto da activity
+    public void construirForca(){
+        List<ImageView> corpo = new ArrayList<ImageView>();
+        ImageView obterParte = new ImageView(this);
+
+        obterParte.findViewById(R.id.cabeca);
     }
 
 }
