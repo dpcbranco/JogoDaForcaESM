@@ -334,7 +334,7 @@
         android:layout_toStartOf="@+id/perna_dir"/>
 
     <TextView
-        android:text="Letras usadas"
+        android:text="Status:"
         android:textAlignment="center"
         android:layout_width="300px"
         android:layout_height="wrap_content"
