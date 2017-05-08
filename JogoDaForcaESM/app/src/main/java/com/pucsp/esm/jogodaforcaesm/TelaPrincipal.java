@@ -32,16 +32,17 @@ public class TelaPrincipal extends AppCompatActivity {
             public void onClick(View v) {
                 EditText campo_nickname  = (EditText) findViewById(R.id.nickname);
                 EditText campo_sala = (EditText) findViewById(R.id.end_sala);
-                InetAddress endereco = null;
                 try {
-                    endereco = InetAddress.getByName(campo_sala.getText().toString());
-                    if (endereco == null){
-                        throw new UnknownHostException();
+                    String endereco_str = campo_sala.getText().toString();
+                    String nickname = campo_nickname.getText().toString();
+                    if (endereco_str == null){
+                        throw new Exception();
                     }
-                } catch (UnknownHostException e) {
+                }catch (Exception e){
                     startActivity(new Intent(TelaPrincipal.this, IpException.class));
                 }
-                Jogador novo_jogador = new Jogador(campo_nickname.getText().toString());
+
+
             }
         });
 
