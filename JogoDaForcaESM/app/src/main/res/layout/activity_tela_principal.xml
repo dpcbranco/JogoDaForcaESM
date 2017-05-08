@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pucsp.esm.jogodaforcaesm.TelaPrincipal">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="JOGO DA FORCA ESM"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="30sp"
+        android:layout_above="@+id/nickname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp" />
+
+    <EditText
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Jogador"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_editor_absoluteY="206dp"
+        app:layout_editor_absoluteX="85dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/end_sala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Sala"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_editor_absoluteY="265dp"
+        tools:layout_editor_absoluteY="288dp"
+        tools:layout_editor_absoluteX="85dp"
+        android:layout_marginBottom="31dp"
+        android:layout_above="@+id/entrar"
+        android:layout_alignLeft="@+id/nickname"
+        android:layout_alignStart="@+id/nickname" />
+
+    <Button
+        android:id="@+id/entrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entrar"
+        app:layout_editor_absoluteX="148dp"
+        app:layout_editor_absoluteY="339dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="78dp" />
+</RelativeLayout>
