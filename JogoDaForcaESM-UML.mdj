@@ -8558,22 +8558,22 @@
 						},
 						{
 							"_type": "UMLTransitionView",
-							"_id": "AAAAAAFb+A9Ssj9XS2g=",
+							"_id": "AAAAAAFb+BYpgabuh2Q=",
 							"_parent": {
 								"$ref": "AAAAAAFb09yqkb5Gs8o="
 							},
 							"model": {
-								"$ref": "AAAAAAFb+A9Ssj9Wmf8="
+								"$ref": "AAAAAAFb+BYpgKbtKek="
 							},
 							"subViews": [
 								{
 									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFb+A9Ssj9YlVg=",
+									"_id": "AAAAAAFb+BYpgabvFJM=",
 									"_parent": {
-										"$ref": "AAAAAAFb+A9Ssj9XS2g="
+										"$ref": "AAAAAAFb+BYpgabuh2Q="
 									},
 									"model": {
-										"$ref": "AAAAAAFb+A9Ssj9Wmf8="
+										"$ref": "AAAAAAFb+BYpgKbtKek="
 									},
 									"visible": true,
 									"enabled": true,
@@ -8584,31 +8584,31 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 1660,
-									"top": 41,
-									"width": 205.96240234375,
+									"left": 1744,
+									"top": 128,
+									"width": 175.5888671875,
 									"height": 13,
 									"autoResize": false,
-									"alpha": 1.125495070670278,
-									"distance": 97.50897394599124,
+									"alpha": 0.009008764478860423,
+									"distance": 111.00450441310929,
 									"hostEdge": {
-										"$ref": "AAAAAAFb+A9Ssj9XS2g="
+										"$ref": "AAAAAAFb+BYpgabuh2Q="
 									},
 									"edgePosition": 1,
 									"underline": false,
-									"text": "[proxJogador] :  / mostrarParte()",
+									"text": "after( t )  :  / sortearJogador()",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5,
 									"wordWrap": false
 								},
 								{
 									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFb+A9Ssz9ZE14=",
+									"_id": "AAAAAAFb+BYpgabwtnM=",
 									"_parent": {
-										"$ref": "AAAAAAFb+A9Ssj9XS2g="
+										"$ref": "AAAAAAFb+BYpgabuh2Q="
 									},
 									"model": {
-										"$ref": "AAAAAAFb+A9Ssj9Wmf8="
+										"$ref": "AAAAAAFb+BYpgKbtKek="
 									},
 									"visible": null,
 									"enabled": true,
@@ -8627,7 +8627,7 @@
 									"alpha": 1.5707963267948966,
 									"distance": 30,
 									"hostEdge": {
-										"$ref": "AAAAAAFb+A9Ssj9XS2g="
+										"$ref": "AAAAAAFb+BYpgabuh2Q="
 									},
 									"edgePosition": 1,
 									"underline": false,
@@ -8637,12 +8637,12 @@
 								},
 								{
 									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFb+A9Ssz9akkI=",
+									"_id": "AAAAAAFb+BYpgqbxDE8=",
 									"_parent": {
-										"$ref": "AAAAAAFb+A9Ssj9XS2g="
+										"$ref": "AAAAAAFb+BYpgabuh2Q="
 									},
 									"model": {
-										"$ref": "AAAAAAFb+A9Ssj9Wmf8="
+										"$ref": "AAAAAAFb+BYpgKbtKek="
 									},
 									"visible": false,
 									"enabled": true,
@@ -8661,7 +8661,7 @@
 									"alpha": -1.5707963267948966,
 									"distance": 15,
 									"hostEdge": {
-										"$ref": "AAAAAAFb+A9Ssj9XS2g="
+										"$ref": "AAAAAAFb+BYpgabuh2Q="
 									},
 									"edgePosition": 1,
 									"underline": false,
@@ -8691,13 +8691,13 @@
 							"showVisibility": true,
 							"showProperty": true,
 							"nameLabel": {
-								"$ref": "AAAAAAFb+A9Ssj9YlVg="
+								"$ref": "AAAAAAFb+BYpgabvFJM="
 							},
 							"stereotypeLabel": {
-								"$ref": "AAAAAAFb+A9Ssz9ZE14="
+								"$ref": "AAAAAAFb+BYpgabwtnM="
 							},
 							"propertyLabel": {
-								"$ref": "AAAAAAFb+A9Ssz9akkI="
+								"$ref": "AAAAAAFb+BYpgqbxDE8="
 							}
 						}
 					]
@@ -9602,11 +9602,11 @@
 						},
 						{
 							"_type": "UMLTransition",
-							"_id": "AAAAAAFb+A9Ssj9Wmf8=",
+							"_id": "AAAAAAFb+BYpgKbtKek=",
 							"_parent": {
 								"$ref": "AAAAAAFb09yqkb5FiKw="
 							},
-							"name": "[proxJogador]",
+							"name": "after( t ) ",
 							"source": {
 								"$ref": "AAAAAAFb0/F6Y8F80fI="
 							},
@@ -9618,11 +9618,11 @@
 							"effects": [
 								{
 									"_type": "UMLOpaqueBehavior",
-									"_id": "AAAAAAFb+A/oLz9oNoI=",
+									"_id": "AAAAAAFb+BhIEKdEkIg=",
 									"_parent": {
-										"$ref": "AAAAAAFb+A9Ssj9Wmf8="
+										"$ref": "AAAAAAFb+BYpgKbtKek="
 									},
-									"name": "mostrarParte()",
+									"name": "sortearJogador()",
 									"visibility": "public",
 									"isReentrant": true
 								}
