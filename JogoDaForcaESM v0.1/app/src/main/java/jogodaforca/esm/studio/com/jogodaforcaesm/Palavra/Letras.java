@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 
-import java.lang.reflect.Method;
 
 /**
  * Created by Shikado on 29/04/2017.
@@ -21,6 +20,7 @@ public class Letras extends Button {
             public void onClick(View v) {
                 setActivated(false);
                 letra = getText().toString();
+                context.getClass().getMethod()
             }
         });
     }

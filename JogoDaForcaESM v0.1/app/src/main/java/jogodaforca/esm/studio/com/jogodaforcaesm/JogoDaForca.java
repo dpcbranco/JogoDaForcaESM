@@ -218,6 +218,9 @@ public class JogoDaForca extends AppCompatActivity {
         player1.obterCorpo(corpo);
     }
 
+    public void jogada (String letra){
+
+    }
 
 
 }
