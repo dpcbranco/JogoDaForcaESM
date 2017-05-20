@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="143dp"
         android:fontFamily="sans-serif"
-        android:text="ERRO: Endereço da sala inválido!"
+        android:text="ERRO: Não foi possível se conectar ä sala!"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textStyle="bold" />
