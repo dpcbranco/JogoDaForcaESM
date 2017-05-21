@@ -1,0 +1,44 @@
+package controlador;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+public class ControladorFX implements Initializable{
+
+	@FXML private Button iniciar;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		iniciar.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				Stage stage = (Stage) iniciar.getScene().getWindow(); 
+				Parent root;
+				try{
+					root = FXMLLoader.load(getClass().getResource("janelas.fxml_sala.fxml"));
+					Scene scene = new Scene(root);
+					stage.setScene(scene);
+					stage.show();
+				}catch (IOException e){
+					
+				}
+
+			}
+		});
+	}
+
+
+
+}

@@ -1,0 +1,30 @@
+package janelas;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import servidor.Servidor;
+
+public class ControladorSala implements Initializable {
+
+	@FXML private Button iniciar_jogo;
+	Servidor server;
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+		iniciar_jogo.setDisabled(true);
+		
+		try{
+			server = new Servidor();
+		}catch (IOException e){
+			
+		}
+		
+	}
+	
+}

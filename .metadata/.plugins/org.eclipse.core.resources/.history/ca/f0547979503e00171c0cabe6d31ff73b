@@ -1,0 +1,29 @@
+package fxml;
+
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import servidor.Servidor;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ControladorInicial implements Initializable
+{
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
+    }
+    
+    @FXML
+    private void iniciarServidor (ActionEvent event) {
+    	try{
+    		Servidor server = new Servidor();
+    		Application.launch(Sala.class, null);
+    	}catch (IOException e){
+			
+    	}
+    }
+}

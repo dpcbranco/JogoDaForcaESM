@@ -1,7 +1,49 @@
 package jogodaForcaESM;
 
+import java.io.DataInputStream;
+import java.io.EOFException;
+import java.io.IOException;
 import java.net.Socket;
 
-public class Jogador extends Socket {
+public class Jogador extends Thread {
+	Socket cliente;
 	String nome;
+	String ip;
+	DataInputStream entrada;
+	
+	public Jogador(Socket cliente){
+		this.cliente = cliente;
+		ip =  cliente.getInetAddress().getHostAddress();
+		try {
+			entrada = new DataInputStream(cliente.getInputStream());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void run(){
+		try{
+			while (cliente.isConnected()){
+				System.out.println(entrada.readUTF());
+			}
+		}catch (EOFException e){
+			System.out.println("Jogador" + ip + " foi descontectado");
+			encerrarCliente();
+			//this.notify();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void encerrarCliente() {
+		try{
+			cliente.close();
+		}catch (IOException e){
+			
+		}
+	}
 }
+

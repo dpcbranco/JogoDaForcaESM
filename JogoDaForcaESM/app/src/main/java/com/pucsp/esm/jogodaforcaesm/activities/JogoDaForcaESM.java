@@ -38,11 +38,10 @@ public class JogoDaForcaESM extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jogo_da_forca);
-        conectar.execute("192.168.1.6");
+        conectar.execute("192.168.1.7");
         try {
             cliente = conectar.get();
             jogada = new DataOutputStream(cliente.getOutputStream());
-            jogada.writeUTF("Batata");
             letra_usada = new Usada (jogada);
             
         } catch (InterruptedException e) {
