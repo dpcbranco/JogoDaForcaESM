@@ -1,0 +1,11 @@
+package jogodaForcaESM;
+import java.io.IOException;
+
+import servidor.*;
+public class JogoDaForcaESM {
+
+	public static void main(String[] args) throws IOException {
+		Servidor server = new Servidor();
+	}
+
+}
