@@ -8,6 +8,7 @@
     tools:context=".activities.JogoDaForcaESM">
 
     <Button
+        android:onClick="disableButton"
         android:text="A"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -18,6 +19,7 @@
         android:layout_alignParentStart="true" />
 
     <Button
+        android:onClick="disableButton"
         android:text="B"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -28,6 +30,7 @@
         android:layout_toEndOf="@+id/A" />
 
     <Button
+        android:onClick="disableButton"
         android:text="C"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -38,6 +41,7 @@
         android:layout_toEndOf="@+id/B" />
 
     <Button
+        android:onClick="disableButton"
         android:text="D"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -48,6 +52,7 @@
         android:layout_toEndOf="@+id/C" />
 
     <Button
+        android:onClick="disableButton"
         android:text="E"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -58,6 +63,7 @@
         android:layout_toEndOf="@+id/D" />
 
     <Button
+        android:onClick="disableButton"
         android:text="F"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -68,6 +74,7 @@
         android:layout_toEndOf="@+id/E" />
 
     <Button
+        android:onClick="disableButton"
         android:text="G"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -77,6 +84,7 @@
         android:layout_toStartOf="@+id/B" />
 
     <Button
+        android:onClick="disableButton"
         android:text="H"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -87,6 +95,7 @@
         android:layout_toEndOf="@+id/G" />
 
     <Button
+        android:onClick="disableButton"
         android:text="I"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -97,6 +106,7 @@
         android:layout_toEndOf="@+id/H" />
 
     <Button
+        android:onClick="disableButton"
         android:text="J"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -107,6 +117,7 @@
         android:layout_toEndOf="@+id/I" />
 
     <Button
+        android:onClick="disableButton"
         android:text="K"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -117,6 +128,7 @@
         android:layout_toEndOf="@+id/J" />
 
     <Button
+        android:onClick="disableButton"
         android:text="L"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -127,6 +139,7 @@
         android:layout_toEndOf="@+id/K" />
 
     <Button
+        android:onClick="disableButton"
         android:text="M"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -136,6 +149,7 @@
         android:layout_toStartOf="@+id/H" />
 
     <Button
+        android:onClick="disableButton"
         android:text="N"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -146,6 +160,7 @@
         android:layout_toEndOf="@+id/M" />
 
     <Button
+        android:onClick="disableButton"
         android:text="O"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -156,6 +171,7 @@
         android:layout_toEndOf="@+id/N" />
 
     <Button
+        android:onClick="disableButton"
         android:text="P"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -166,6 +182,7 @@
         android:layout_toEndOf="@+id/O" />
 
     <Button
+        android:onClick="disableButton"
         android:text="Q"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -176,6 +193,7 @@
         android:layout_toEndOf="@+id/P" />
 
     <Button
+        android:onClick="disableButton"
         android:text="R"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -186,6 +204,7 @@
         android:layout_toEndOf="@+id/Q" />
 
     <Button
+        android:onClick="disableButton"
         android:text="S"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -195,6 +214,7 @@
         android:layout_toStartOf="@+id/N" />
 
     <Button
+        android:onClick="disableButton"
         android:text="T"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -205,6 +225,7 @@
         android:layout_toEndOf="@+id/S" />
 
     <Button
+        android:onClick="disableButton"
         android:text="U"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -215,6 +236,7 @@
         android:layout_toEndOf="@+id/T" />
 
     <Button
+        android:onClick="disableButton"
         android:text="V"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -225,6 +247,7 @@
         android:layout_toEndOf="@+id/U" />
 
     <Button
+        android:onClick="disableButton"
         android:text="W"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -235,6 +258,7 @@
         android:layout_toEndOf="@+id/V" />
 
     <Button
+        android:onClick="disableButton"
         android:text="X"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -245,6 +269,7 @@
         android:layout_toEndOf="@+id/W" />
 
     <Button
+        android:onClick="disableButton"
         android:text="Y"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -254,6 +279,7 @@
         android:layout_toStartOf="@+id/T" />
 
     <Button
+        android:onClick="disableButton"
         android:text="Z"
         android:layout_width="20pt"
         android:layout_height="wrap_content"
@@ -264,6 +290,7 @@
         android:layout_toEndOf="@+id/Y" />
 
     <Button
+        android:onClick="disableButton"
         android:text="ARRISCAR PALAVRAS"
         android:layout_width="300pt"
         android:layout_height="wrap_content"
