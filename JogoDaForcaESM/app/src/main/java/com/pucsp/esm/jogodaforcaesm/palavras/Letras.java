@@ -5,23 +5,18 @@ package com.pucsp.esm.jogodaforcaesm.palavras;
  */
 
 import android.content.Context;
-import android.view.View;
 import android.widget.Button;
 
 public class Letras extends Button {
 
-    private String letra;
-
-    public Letras(final Context context) {
-        super(context);
-        setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setActivated(false);
-                letra = getText().toString();
-            }
-        });
+    public String getLetra() {
+        return letra;
     }
 
+    String letra;
 
+    public Letras(final Context context, String letra) {
+        super(context);
+        this.letra = letra;
+    }
 }
