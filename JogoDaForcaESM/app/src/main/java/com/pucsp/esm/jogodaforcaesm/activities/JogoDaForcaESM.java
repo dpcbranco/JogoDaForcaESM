@@ -33,15 +33,21 @@ public class JogoDaForcaESM extends AppCompatActivity {
     private Usada letra_usada;
     //Conexão deve ser realizada em Thread separada - ASyncTask
     private Conexao conectar = new Conexao();
+    private String ip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jogo_da_forca);
-        conectar.execute("192.168.1.7");
+
+        //capturar entrada usuario - Tela Principal
+        jogador.setNome(getIntent().getStringExtra("NICKNAME"));
+        ip = getIntent().getStringExtra("IP");
+        conectar.execute(ip);
         try {
             cliente = conectar.get();
             jogada = new DataOutputStream(cliente.getOutputStream());
+            jogada.writeUTF(jogador.getNome());
             letra_usada = new Usada (jogada);
             
         } catch (InterruptedException e) {

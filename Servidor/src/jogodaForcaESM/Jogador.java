@@ -11,7 +11,7 @@ public class Jogador extends Thread {
 	String ip;
 	DataInputStream entrada;
 	
-	public Jogador(Socket cliente){
+	public Jogador(Socket cliente, String nome){
 		this.cliente = cliente;
 		ip =  cliente.getInetAddress().getHostAddress();
 		try {
@@ -29,7 +29,7 @@ public class Jogador extends Thread {
 				System.out.println(entrada.readUTF());
 			}
 		}catch (EOFException e){
-			System.out.println("Jogador" + ip + " foi descontectado");
+			System.out.println("Jogador " + ip + " foi descontectado");
 			encerrarCliente();
 			//this.notify();
 		} catch (IOException e) {

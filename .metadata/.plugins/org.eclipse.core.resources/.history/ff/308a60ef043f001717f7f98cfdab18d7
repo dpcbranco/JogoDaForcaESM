@@ -1,0 +1,42 @@
+package servidor;
+
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+
+import jogodaForcaESM.Jogador;
+
+
+public class Servidor {
+	
+	ServerSocket servidor;
+	ArrayList <Jogador> jogadores = new ArrayList<>(); 
+	
+	public Servidor () throws IOException {
+		
+		servidor = new ServerSocket(12345);
+		System.out.println("Porta 12345 aberta!");
+		Socket novo_jogador;
+		
+		while (true){
+
+			novo_jogador = servidor.accept();	
+				
+			System.out.println("Nova conexão com o cliente " +   
+					novo_jogador.getInetAddress().getHostAddress()
+					);
+		
+			jogadores.add(new Jogador (novo_jogador, ((DataInputStream) novo_jogador.getInputStream()).readUTF()));
+			jogadores.get(jogadores.size()-1).start();
+		
+		}
+		
+	}
+	
+	
+	public int getNJogador(){
+		return jogadores.size();
+	}
+}

@@ -37,8 +37,6 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Sala"
-        android:inputType="number"
-        android:digits="0123456789."
         android:textAlignment="center"
         app:layout_editor_absoluteY="265dp"
         tools:layout_editor_absoluteY="288dp"

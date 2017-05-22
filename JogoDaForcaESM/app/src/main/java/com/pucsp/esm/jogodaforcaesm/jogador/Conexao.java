@@ -18,6 +18,7 @@ public class Conexao extends AsyncTask <String, Void, Socket> {
 
         try {
             client = new Socket(params[0], 12345);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
