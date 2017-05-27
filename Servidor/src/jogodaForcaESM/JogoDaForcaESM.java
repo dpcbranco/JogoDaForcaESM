@@ -13,8 +13,6 @@ public class JogoDaForcaESM {
 	public static void main(String[] args) throws IOException {
 		Application.launch(TelaInicial.class, args);
 		ArrayList <Jogador> jogadores = new ArrayList<>();
-		
-		
 	}
 	
 	public void jogadorEntrou (Jogador j){

@@ -1,0 +1,27 @@
+package janelas;
+
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.util.Duration;
+import servidor.Servidor;
+
+public class Temporizador {
+	
+	Timeline temporizador;
+	KeyFrame controlador;
+	ControladorSala sala;
+	
+	public Temporizador (ControladorSala sala){
+		temporizador = new Timeline();
+		temporizador.setCycleCount(Animation.INDEFINITE);
+		
+		controlador = new KeyFrame (Duration.ONE, ev -> sala.entrarJogador());
+		
+		temporizador.getKeyFrames().add(controlador);
+	}
+
+	public void start() {
+		temporizador.play();
+	}
+}
