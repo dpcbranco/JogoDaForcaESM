@@ -11,7 +11,6 @@
 <fullyQualifiedTypeName name="com.sun.glass.ui.Application"/>
 <fullyQualifiedTypeName name="javafx.application.Application"/>
 <fullyQualifiedTypeName name="janelas.Sala"/>
-<fullyQualifiedTypeName name="javafx.event.EventHandler"/>
 <fullyQualifiedTypeName name="javafx.stage.Stage"/>
 <fullyQualifiedTypeName name="javafx.scene.Scene"/>
 <fullyQualifiedTypeName name="javafx.fxml.FXMLLoader"/>
@@ -35,9 +34,16 @@
 <fullyQualifiedTypeName name="java.net.NetworkInterface"/>
 <fullyQualifiedTypeName name="java.net.Inet4Address"/>
 <fullyQualifiedTypeName name="java.net.SocketException"/>
-<fullyQualifiedTypeName name="janelas.ControladorSala"/>
 <fullyQualifiedTypeName name="janelas.Temporizador"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.net.BindException"/>
 <fullyQualifiedTypeName name="javafx.application.Platform"/>
+<fullyQualifiedTypeName name="jogodaForcaESM.PalavraSecreta"/>
+<fullyQualifiedTypeName name="javafx.event.EventHandler"/>
+<fullyQualifiedTypeName name="jogodaForcaESM.JogoDaForcaESM"/>
+<fullyQualifiedTypeName name="janelas.ControladorJogo"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="servidor.Jogador"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="janelas.ControladorSala"/>
+<fullyQualifiedTypeName name="servidor.AbreServidor"/>
 </qualifiedTypeNameHistroy>

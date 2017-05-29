@@ -1,0 +1,51 @@
+package jogodaForcaESM;
+
+import janelas.ControladorJogo;
+import servidor.Jogador;
+import servidor.Servidor;
+
+public class JogoDaForcaESM implements Runnable {
+
+	Servidor server;
+	ControladorJogo controller;
+	Jogador proximo;
+	String jogada = null ;
+
+	public JogoDaForcaESM(Servidor server, ControladorJogo controller) {
+		this.server = server;
+		this.controller= controller;
+	}
+
+	@Override
+	public void run() {
+		if (server != null){
+			while (true){
+				proximo = server.getJogador(sortearJogador(server.getNJogador()));
+				proximo.setJogo(this);
+				proximo.start();
+				
+				//espera jogada
+				while (jogada == null){
+					
+				}
+				System.out.println(jogada);
+				controller.testarLetra(jogada);
+				jogada = null;
+				proximo.interrupt();
+			}
+		}
+		else {
+			System.out.println("WTF");
+		}
+	}
+
+	private int sortearJogador(int n){
+		return (int) (Math.random() * n);
+
+	}
+
+	public void setLetra(String letra) {
+		jogada = letra;
+	}
+
+}

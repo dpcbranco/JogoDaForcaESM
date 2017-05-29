@@ -1,0 +1,71 @@
+package janelas;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import jogodaForcaESM.PalavraSecreta;
+
+public class ControladorJogo implements Initializable{
+
+	@FXML private Label letras_usadas;
+	@FXML private Label p1;
+	@FXML private Label p2;
+	@FXML private Label jogador;
+	
+	PalavraSecreta palavra_1;
+	PalavraSecreta palavra_2;
+	
+	String [] letras_p1;
+	String [] letras_p2;
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+	}
+
+	public void getP1(String palavra) {
+		palavra_1.setPalavra_completa(palavra);
+		palavra_1.setLetras(palavra.split(""));
+		palavra_1.setPalavra_oculta();
+		p1.setText(palavra_1.getPalavra_oculta());
+		
+	}
+	
+	public void getP2(String palavra) {
+		palavra_2.setPalavra_completa(palavra);
+		palavra_2.setLetras(palavra.split(""));
+		palavra_2.setPalavra_oculta();
+		p1.setText(palavra_2.getPalavra_oculta());
+	}
+
+	public boolean testarLetra(String letra) {
+		boolean acerto = false;
+		if (palavra_1.testarLetra(letra)){
+			acerto = true;
+			p1.setText(palavra_1.getPalavra_oculta());
+		}
+
+		if (palavra_2.testarLetra(letra)){
+			acerto = true;
+			p1.setText(palavra_1.getPalavra_oculta());
+		}
+		
+		return acerto;
+	}
+
+	public boolean ganhou() {
+		return (palavra_1.completa() && palavra_2.completa());
+	}
+
+	public void mostrarVitoria() {
+				
+	}
+
+	public void letraUsada(String jogada) {
+		letras_usadas.setText(letras_usadas.getText() + jogada + " ");
+	}
+}

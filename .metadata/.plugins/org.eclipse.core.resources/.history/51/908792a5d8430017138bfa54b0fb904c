@@ -1,0 +1,27 @@
+package jogodaForcaESM;
+import janelas.ControladorJogo;
+import janelas.TelaInicial;
+import javafx.application.Application;
+
+import servidor.*;
+public class JogoDaForcaESM implements Runnable {
+	
+	Servidor server;
+	ControladorJogo controller;
+	
+	public JogoDaForcaESM(Servidor server, ControladorJogo controller) {
+		this.server = server;
+		this.controller= controller;
+	}
+
+	public static void main(String[] args) {
+		Application.launch(TelaInicial.class, args);
+	}
+
+	@Override
+	public void run() {
+				
+	}
+	
+	
+}

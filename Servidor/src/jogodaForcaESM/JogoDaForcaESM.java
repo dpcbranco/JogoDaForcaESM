@@ -1,22 +1,68 @@
 package jogodaForcaESM;
-import java.io.IOException;
-import java.util.ArrayList;
 
-import janelas.TelaInicial;
-import javafx.application.Application;
+import janelas.ControladorJogo;
+import janelas.Temporizador;
+import servidor.Jogador;
+import servidor.Servidor;
 
-import servidor.*;
-public class JogoDaForcaESM {
+public class JogoDaForcaESM extends Thread {
 
-	private ArrayList <Jogador> jogadores = new ArrayList<>();
-	
-	public static void main(String[] args) throws IOException {
-		Application.launch(TelaInicial.class, args);
-		ArrayList <Jogador> jogadores = new ArrayList<>();
+	Servidor server;
+	ControladorJogo controller;
+	Temporizador temporizador;
+	Jogador proximo;
+	static String jogada = null ;
+
+	public JogoDaForcaESM(Servidor server, ControladorJogo controller) {
+		this.server = server;
+		this.controller = controller;
+		this.temporizador = new Temporizador(controller);
+		controller.setJogo(this);
 	}
-	
-	public void jogadorEntrou (Jogador j){
-		jogadores.add(j);
+
+	public synchronized void  run() {
+		if (server != null){
+			while (true){
+				proximo = server.getJogador(sortearJogador(server.getNJogador()));
+				proximo.setJogo(this);
+				
+				try {
+					proximo.join();
+					wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+				System.out.println(jogada);
+				//temporizador.escreverLetra(jogada);
+				temporizador.escreverLetra("A");
+				jogada = null;	
+
+
+
+				//proximo.interrupt();
+			}
+		}
+		else {
+			System.out.println("WTF");
+		}
+		try {
+			wait(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	private int sortearJogador(int n){
+		return (int) (Math.random() * n);
+
+	}
+
+	public static void setLetra(String letra) {
+		jogada = letra;
 	}
 
 }

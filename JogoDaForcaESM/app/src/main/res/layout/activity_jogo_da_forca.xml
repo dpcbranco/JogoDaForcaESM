@@ -316,7 +316,7 @@
         android:layout_marginTop="36dp"
         android:layout_alignParentTop="true"
         android:layout_alignEnd="@+id/forca_estrutura"
-        android:visibility="visible"
+        android:visibility="invisible"
         />
 
     <ImageView
@@ -324,7 +324,7 @@
         android:layout_height="100px"
         app:srcCompat="@drawable/forca_corpo"
         android:id="@+id/corpo"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:layout_below="@+id/cabeca"
         android:layout_alignStart="@+id/cabeca"
         />
@@ -334,7 +334,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/forca_bracos"
         android:id="@+id/bracos"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:layout_below="@+id/cabeca"
         android:layout_alignStart="@+id/perna_esq"/>
 
@@ -343,7 +343,7 @@
         android:layout_height="60px"
         app:srcCompat="@drawable/forca_perna_dir"
         android:id="@+id/perna_dir"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:layout_below="@+id/corpo"
         android:layout_toStartOf="@+id/arriscar_palavras"/>
 
@@ -352,7 +352,7 @@
         android:layout_height="60px"
         app:srcCompat="@drawable/forca_perna_esq"
         android:id="@+id/perna_esq"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:layout_below="@+id/corpo"
         android:layout_toStartOf="@+id/perna_dir"/>
 

@@ -8,11 +8,18 @@ import java.net.SocketException;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.ResourceBundle;
-
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
+import javafx.util.Callback;
+import jogodaForcaESM.JogoDaForcaESM;
 import servidor.Servidor;
 
 public class ControladorSala implements Initializable {
@@ -20,52 +27,54 @@ public class ControladorSala implements Initializable {
 	@FXML private Button iniciar_jogo;
 	@FXML private Label sala;
 	@FXML private Label ip;
-	Servidor server = null;
-	Temporizador t;
 	
+	final Servidor server;
+
 	//Implementado para parametrizar controlador para servidor em sua criação
-	ControladorSala c = this;
+
+	public ControladorSala() throws IOException{
+		server = new Servidor(this);
+	}
 	
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
 		//implemmentação da abertura do servidor
-		Thread iniciarServer = new Thread (new Runnable(){
-
-			@Override
-			public void run() {
-				try {
-					server = new Servidor(c);
-					t = server.getTemporizador();					
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			
-		});
-		iniciarServer.start();
-		
-		iniciar_jogo.setDisable(true);
-		
-		Thread contarJogadores = new Thread (new Runnable(){
-
-			@Override
-			public void run() {
-				while (server.getNJogador() < 3){
-					//iniciar_jogo.setDisable(true);
-				}
-				
-				iniciar_jogo.setDisable(false);
-			}
-			
-		});
-		
-		contarJogadores.start();
+		Thread iniciarServidor = new Thread ((Runnable) server);
+		iniciarServidor.start();
+		//iniciar_jogo.setDisable(true);
 		
 		//mostrar IP para usuários
 		ip.setText(IP());
+		
+		iniciar_jogo.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				Stage stage = (Stage) iniciar_jogo.getScene().getWindow(); 
+				Parent root;
+				try{
+					//impede entrada de novos jogadores
+					server.barrarEntrada();
+					
+					//loader implementado para parametrizar controlador para JogoDaForcaESM
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml_jogo.fxml"));
+					root = fxmlLoader.load();
+					Scene scene = new Scene(root);
+					stage.setScene(scene);
+					stage.show();
+					
+					ControladorJogo c_jogo = fxmlLoader.<ControladorJogo>getController();
+					
+					
+					
+				}catch (IOException e){
+					
+				}
+
+			}
+		});
 	}
 	
 	//escreve entrada do jogador na sala
@@ -113,5 +122,9 @@ public class ControladorSala implements Initializable {
 	        } 
 	        return  IP_address;
 	    }
+
+	public void ativarIniciar() {
+		iniciar_jogo.setDisable(false);		
+	}
 	
 }

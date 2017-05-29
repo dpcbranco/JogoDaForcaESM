@@ -1,0 +1,82 @@
+package janelas;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import jogodaForcaESM.JogoDaForcaESM;
+import jogodaForcaESM.PalavraSecreta;
+
+public class ControladorJogo implements Initializable{
+
+	@FXML private Label letras_usadas;
+	@FXML private Label p1;
+	@FXML private Label p2;
+	@FXML private Label jogador;
+
+	JogoDaForcaESM novo_jogo;
+	
+	//para teste
+	PalavraSecreta palavra_1 = new PalavraSecreta("BATATA");
+	PalavraSecreta palavra_2 = new PalavraSecreta("PENTEADEIRA");
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		for (int i = 0; i < palavra_1.tamanho(); i++){
+			p1.setText(p1.getText() +  "_ ");
+		}
+		
+		for (int i = 0; i < palavra_2.tamanho(); i++){
+			p2.setText(p2.getText() + "_ ");
+		}
+		
+		Thread iniciar_ESM = new Thread ((Runnable) novo_jogo);
+		iniciar_ESM.setName ("Jogo Da Forca");
+		iniciar_ESM.start();
+		
+	}
+
+
+	public boolean testarLetra(String jogada) {
+		
+		boolean teste = false;
+		
+		p1.setText("");
+		
+		for	(int i = 0; i < palavra_1.tamanho(); i++){
+			if (palavra_1.getLetra(i) == jogada){
+				p1.setText(p1.getText() + jogada + " ");
+				teste = true;
+			}
+			
+			else{
+				p1.setText(p1.getText() + "_ ");
+			}
+		}
+		
+		p2.setText("");
+		
+		for	(int i = 0; i < palavra_2.tamanho(); i++){
+			if (palavra_2.getLetra(i) == jogada){
+				p2.setText(p2.getText() + jogada + " ");
+				teste = true;
+			}
+			
+			else{
+				p2.setText(p2.getText() + "_ ");
+			}
+		}
+		
+		return teste;
+	}
+
+
+	public void setJogo(JogoDaForcaESM novo_jogo) {
+		this.novo_jogo = novo_jogo;		
+	}
+
+
+}

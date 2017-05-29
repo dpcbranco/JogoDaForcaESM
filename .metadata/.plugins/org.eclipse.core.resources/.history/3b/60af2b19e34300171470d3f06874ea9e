@@ -1,0 +1,31 @@
+package servidor;
+
+import java.io.IOException;
+
+import janelas.ControladorSala;
+
+public class AbreServidor implements Runnable {
+
+	Servidor server;
+	ControladorSala c;
+	
+	public AbreServidor (ControladorSala c){
+		this.c = c;
+	}
+	
+	@Override
+	public void run() {
+		try {
+			this.server = new Servidor(c);	
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	public Servidor getServer() {
+		return server;
+	}
+
+}

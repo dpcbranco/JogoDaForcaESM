@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="janelas.ControladorJogo">
+   <children>
+      <Label layoutX="466.0" layoutY="14.0" text="Letras Usadas" />
+      <Label fx:id="letras_usadas" alignment="TOP_LEFT" layoutX="438.0" layoutY="37.0" prefHeight="82.0" prefWidth="128.0" style="-fx-border-color: black; -fx-border-width: 1pt;" />
+      <Label fx:id="p1" layoutX="100.0" layoutY="31.0" prefHeight="43.0">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="p2" layoutX="100.0" layoutY="149.0" prefHeight="43.0">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="283.0" text="Jogando:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="jogador" layoutX="142.0" layoutY="283.0" prefHeight="30.0" prefWidth="147.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="222.0" text="TEMPO">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="468.0" layoutY="266.0" prefHeight="63.0" prefWidth="65.0" text="60">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="48.0" text="P1">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="166.0" text="P2">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

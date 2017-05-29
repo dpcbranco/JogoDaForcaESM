@@ -10,50 +10,32 @@ import java.util.ArrayList;
 import janelas.ControladorSala;
 import janelas.Temporizador;
 import javafx.application.Platform;
-import jogodaForcaESM.Jogador;
 
 
-public class Servidor {
+public class Servidor implements Runnable {
 	
 	ServerSocket servidor;
 	ArrayList <Jogador> jogadores = new ArrayList<>(); 
 	Socket novo_jogador;
 	String nome_jogador;
 	Temporizador temporizador;
+	boolean aberta = true;
+	ControladorSala c;
 	
 	public Servidor (ControladorSala c) throws IOException {
 		try{
 			servidor = new ServerSocket(12345);
 		}catch (BindException e){
 			Platform.exit();
+			System.exit(0);
 		}
 		
 		System.out.println("Porta 12345 aberta!");
 		
 		temporizador = new Temporizador(c);
-		
-		while (true){
-			
-			novo_jogador = servidor.accept();	
-			nome_jogador = new DataInputStream(novo_jogador.getInputStream()).readUTF();
-			
-			if (novo_jogador != null){
-			
-				System.out.println("Nova conexão com o cliente " +   
-						novo_jogador.getInetAddress().getHostAddress() + ": " + nome_jogador 
-						);
-		
-				jogadores.add(new Jogador (novo_jogador, nome_jogador, temporizador));
-				jogadores.get(jogadores.size()-1).start();
-				
-				
-				novo_jogador = null;
-			}
-		}
-		
+	
 	}
-	
-	
+	 
 	public int getNJogador(){
 		return jogadores.size();
 	}
@@ -69,6 +51,43 @@ public class Servidor {
 
 	public Temporizador getTemporizador() {
 		return temporizador;
+	}
+
+
+	public void barrarEntrada() {
+		aberta = false;		
+	}
+
+
+	public Jogador getJogador(int nJogador) {
+		return jogadores.get(nJogador);
+	}
+
+	@Override
+	public void run() {
+		
+		while (aberta){
+			
+			try {
+				novo_jogador = servidor.accept();
+				nome_jogador = new DataInputStream(novo_jogador.getInputStream()).readUTF();
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+			
+			
+			if (novo_jogador != null){
+				jogadores.add(new Jogador (novo_jogador, nome_jogador, temporizador));
+				jogadores.get(jogadores.size()-1).setName(nome_jogador);
+				novo_jogador = null;
+			}
+			
+			if (jogadores.size() >= 3) c.ativarIniciar();
+		}
+		
+		
 	}
 
 }

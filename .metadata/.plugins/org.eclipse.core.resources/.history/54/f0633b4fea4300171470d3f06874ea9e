@@ -1,0 +1,55 @@
+package jogodaForcaESM;
+import java.io.IOException;
+import java.util.Random;
+
+import janelas.ControladorJogo;
+import janelas.TelaInicial;
+import javafx.application.Application;
+
+import servidor.*;
+public class JogoDaForcaESM implements Runnable {
+
+	Servidor server;
+	ControladorJogo controller;
+	Jogador proximo;
+
+	public JogoDaForcaESM(Servidor server, ControladorJogo controller) {
+		this.server = server;
+		this.controller= controller;
+	}
+
+	public static void main(String[] args) {
+		Application.launch(TelaInicial.class, args);
+	}
+
+	@Override
+	public void run() {
+		
+		String jogada;
+		
+		if (server != null){
+			while (true){
+				proximo = server.getJogador(sortearJogador(server.getNJogador()));
+				proximo.start();
+				
+				try {
+					jogada = proximo.letraEscolhida();
+					controller.testarLetra(jogada);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		}
+		else {
+			System.out.println("WTF");
+		}
+	}
+
+	private int sortearJogador(int n){
+		return (int) (Math.random() * n);
+
+	}
+
+}

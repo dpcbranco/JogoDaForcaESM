@@ -1,0 +1,35 @@
+package janelas;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import jogodaForcaESM.PalavraSecreta;
+
+public class ControladorJogo implements Initializable{
+
+	@FXML private Label letras_usadas;
+	@FXML private Label p1;
+	@FXML private Label p2;
+	@FXML private Label jogador;
+
+	//para teste
+	PalavraSecreta palavra_1 = new PalavraSecreta("BATATA");
+	PalavraSecreta palavra_2 = new PalavraSecreta("PENTEADEIRA");
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		for (int i = 0; i < palavra_1.tamanho(); i++){
+			p1.setText(p1.getText() +  "_ ");
+		}
+		
+		for (int i = 0; i < palavra_2.tamanho(); i++){
+			p2.setText(p2.getText() + "_ ");
+		}
+	}
+
+
+}

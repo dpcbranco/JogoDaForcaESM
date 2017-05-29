@@ -1,0 +1,13 @@
+package jogodaForcaESM;
+
+public class PalavraSecreta {
+	
+	String palavra;
+	String [] letras;
+	
+	public PalavraSecreta(String palavra){
+		this.palavra = palavra;
+		letras = palavra.split("");
+	}
+	
+}

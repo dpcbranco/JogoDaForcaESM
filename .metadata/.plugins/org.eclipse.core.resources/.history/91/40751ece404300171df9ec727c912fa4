@@ -1,0 +1,25 @@
+package janelas;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+
+public class ControladorJogo implements Initializable{
+
+	@FXML private Label letras_usadas;
+	@FXML private Label p1;
+	@FXML private Label p2;
+	@FXML private Label jogador;
+
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+	}
+
+
+}
