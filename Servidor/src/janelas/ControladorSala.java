@@ -30,7 +30,7 @@ public class ControladorSala implements Initializable {
 	
 	final Servidor server;
 
-	//Implementado para parametrizar controlador para servidor em sua criaÁ„o
+	//Implementado para parametrizar controlador para servidor em sua cria√ß√£o
 
 	public ControladorSala() throws IOException{
 		server = new Servidor(this);
@@ -40,12 +40,12 @@ public class ControladorSala implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		//implemmentaÁ„o da abertura do servidor
+		//implemmenta√ß√£o da abertura do servidor
 		Thread iniciarServidor = new Thread ((Runnable) server);
 		iniciarServidor.start();
 		//iniciar_jogo.setDisable(true);
 		
-		//mostrar IP para usu·rios
+		//mostrar IP para usu√°rios
 		ip.setText(IP());
 		
 		iniciar_jogo.setOnAction(new EventHandler<ActionEvent>() {
@@ -60,14 +60,18 @@ public class ControladorSala implements Initializable {
 					
 					//loader implementado para parametrizar controlador para JogoDaForcaESM
 					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml_jogo.fxml"));
+					ControladorJogo c_jogo = new ControladorJogo();
+					JogoDaForcaESM novo_jogo = new JogoDaForcaESM(server, c_jogo);
+					c_jogo.setJogo(novo_jogo);
+					
+					fxmlLoader.setController(c_jogo);
 					root = fxmlLoader.load();
+					
 					Scene scene = new Scene(root);
 					stage.setScene(scene);
 					stage.show();
 					
-					ControladorJogo c_jogo = fxmlLoader.<ControladorJogo>getController();
-					
-					
+				
 					
 				}catch (IOException e){
 					
